@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Spider for Ctrip</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="keywords" content="酒店,机票,携程">
+    <meta name="description" content="Ctrip - 
+    订酒店，机票，就到携程!价格有保障，服务更贴心!要旅游，上携程!携程提供一站式服务，让您有个说走就走的旅程!">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body style="width: auto; overflow: auto;">
+    <div class="wraper" style="height: 947px;">
+        <!-- 导航 --> 
+        <div class="header">
+            <span class="menubtn" status="0">
+                <i style="bottom: 0px;"></i>
+                <i></i>
+                <i style="top: 0px;"></i>
+            </span>
+        </div>
+
+        <!-- 分区 -->
+        <div class="sectionwrap" data-num="0" style="height: 415px; top: 0px;">
+            <div class="section" id="main" style="height: 415px;">
+                <video loop="" autoplay="autoplay" style="width: 1920px; height: 1080.47px;">
+                    <source src="video/back.mp4" type="video/mp4"><source>
+                    <source src="video/back.mp4" type="video/ogv"><source>
+                    <source src="video/back.mp4" type="video/webm"><source>
+                </video>
+                <div class="colormask" style="height: 415px;">
+                    <div class="textwrap">
+                        <br>
+                        <p class="index-content">订酒店，机票，就到携程!</p>
+                        <p class="index-content">价格有保障，服务更贴心!</p>
+						            <p class="index-content">要旅游，上携程!</p>
+                        <p class="index-content">找数据，上Spider for Ctrip!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="sec01" style="height: 415px;">
+                <video loop="" autoplay="autoplay">
+					       <source src="video/guanxi.mp4" type="video/mp4"><source>
+                </video>
+                <div class="colormask" style="height: 415px;">
+                    <div class="textwrap">
+                        <p class="index-title">查机票</p>
+                        <p class="index-content">提供近期的机票价格信息</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="sec02" style="height: 415px;">
+                <div class="colormask" style="height: 415px;">
+                    <div class="textwrap">
+                        <p class="index-title">查航班</p>
+                        <p class="index-content">提供最近的航班动态信息</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="sec03" style="height: 415px;">
+                <div class="colormask" style="height: 415px;">
+                    <div class="textwrap">
+                        <p class="index-title">找特价</p>
+                        <p class="index-content">提供近期的特价机票信息</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="sec04" style="height: 415px;">
+                <div class="colormask" style="height: 415px;">
+                    <div class="textwrap hellowrap">
+                        <h1>GO</h1>
+                        <a href="#" title=""><span class="contact transition">请尽情使用吧</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 状态 -->
+        <div id="zhuangt" class="status hidden-sm hidden-xs">
+            <ul>
+                <li><span class="status_bar select"></span></li>
+                <li><span class="status_bar"></span></li>
+                <li><span class="status_bar"></span></li>
+                <li><span class="status_bar"></span></li>
+                <li><span class="status_bar"></span></li>
+            </ul>
+        </div>
+
+        <!-- 下一页 -->
+        <span class="nextbtn transition" style="background: transparent none repeat scroll 0% 0%;"><i class="fa fa-angle-down"></i></span>
+
+        <!-- 隐藏菜单 -->
+<div class="menu_hide" style="width: 0px; height: 5px;">
+    <div class="menu-mask" style="display: none;"></div>
+    <ul class="nav">
+        <li>
+            <a href="Login.html" style="opacity: 0; left: 0%;" class="">
+                <span>用户登录</span>
+                <i class="fa fa-angle-right fa-lg" name="angle"></i>
+            </a>
+        </li>
+        <li>
+            <a href="About.html" style="opacity: 0; left: 0%;" class="">
+                <span>联系我们</span>
+                <i class="fa fa-angle-right fa-lg" name="angle"></i>
+            </a></li>
+    </ul>
+    <img src="icon/guanbi.svg" class="closemenu transition" style="display: none;">
+</div>
+
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/home.js"></script>
+    <script>
+
+    $(document).ready(function(){
+        /*设置首页Warp高度*/
+        var winHeight = $(window).height();
+        var winWidth = $(window).width();
+        $("div.wraper, div.sectionwrap, div.section, div.colormask").height(winHeight);
+        $(window).resize(function(){
+            var winHeight = $(window).height();
+            var winWidth = $(window).width();
+            $("div.wraper, div.sectionwrap, div.section, div.colormask").height(winHeight);
+        });
+        function videosize() {
+            var box_h = $('#main').height();
+            var bl = 1.777;
+            var video_w = $('#main').width();
+            var video_h = video_w / bl;
+            if (box_h > video_h) {
+                video_h = box_h;
+                video_w = video_h * bl;
+            };
+            $('#main video').width(video_w).height(video_h);
+        }
+        videosize();
+        $(window).resize(function () {
+            videosize();
+        });
+
+        $('.gwc-celan').hide();
+
+        /* 手机移出视频 */
+        if (winWidth <= 992) {
+            $('video').remove();
+        };
+
+    });
+
+    /*鼠标滚珠上下滑动*/
+     var topx = 0
+     var status = 0;
+     $(window).bind('mousewheel DOMMouseScroll', function(event){
+      var obj = $("div.sectionwrap");
+      var num = obj.attr('data-num') * 1;
+      var winHeight = $(window).height();
+         if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+          if (num > 0 && status == 0) {
+              status = 1;
+              topx = -(num - 1) * winHeight;
+              obj.css('top',topx+"px");
+              $('#zhuangt li').find('span').removeClass('select');
+              $('#zhuangt li').eq(num - 1).find('span').addClass('select');
+              setTimeout(function () {
+                  status = 0;
+                  obj.attr('data-num', num - 1);
+                  if (num === 4) {
+                      $('.nextbtn').find('i').attr('class','fa fa-angle-down');
+                  };
+              }, 800);
+          };
+         } else {
+          if (num < 4 && status == 0) {
+              status = 1;
+              topx = -(num + 1) * winHeight;
+              obj.css('top',topx+"px");
+              $('#zhuangt li').find('span').removeClass('select');
+              $('#zhuangt li').eq(num + 1).find('span').addClass('select');
+              setTimeout(function () {
+                  status = 0;
+                  obj.attr('data-num', num + 1);
+                  if (num === 3) {
+                      $('.nextbtn').find('i').attr('class','fa fa-angle-up');
+                  };
+              }, 800);
+             };
+         }
+     });
+
+     $('.nextbtn').click(function () {
+      $(this).css('background','rgba(0,0,0,0.3)');
+      setTimeout(function () {
+          $('.nextbtn').css('background','none');
+      },100);
+      var obj = $("div.sectionwrap");
+      var num = obj.attr('data-num') * 1;
+      var winHeight = $(window).height();
+      if (num < 4 && status == 0) {
+          status = 1;
+          topx = topx - winHeight;
+             obj.css('top',topx+"px");
+          $('#zhuangt li').find('span').removeClass('select');
+          $('#zhuangt li').eq(num + 1).find('span').addClass('select');
+             setTimeout(function () {
+              status = 0;
+              obj.attr('data-num', num + 1);
+              if (num === 3) {
+                  $('.nextbtn').find('i').attr('class','fa fa-angle-up');
+              };
+             }, 600);
+         }
+         if (num == 4  && status == 0) {
+          status = 1;
+          topx = 0;
+             obj.css('top',"0px");
+          $('#zhuangt li').find('span').removeClass('select');
+          $('#zhuangt li').eq(0).find('span').addClass('select');
+             setTimeout(function () {
+              status = 0;
+              obj.attr('data-num', 0);
+              $('.nextbtn').find('i').attr('class','fa fa-angle-down');
+             }, 600);
+         };
+     });
+
+     $('#zhuangt li').click(function () {
+      var obj = $("div.sectionwrap");
+      var num = $(this).index();
+      var winHeight = $(window).height();
+      status = 1;
+      topx = -(num * winHeight);
+         obj.stop().animate({top: topx+"px"}, 300, function () {
+          status = 0;
+          obj.attr('data-num', num);
+          $('#zhuangt li').find('span').removeClass('select');
+          $('#zhuangt li').eq(num).find('span').addClass('select');
+         });
+         obj.css('top',topx+"px");
+      $('#zhuangt li').find('span').removeClass('select');
+      $('#zhuangt li').eq(num).find('span').addClass('select');
+         setTimeout(function () {
+          status = 0;
+          obj.attr('data-num', num);
+          if (num === 3) {
+              $('.nextbtn').find('i').attr('class','fa fa-angle-up');
+          } else {
+              $('.nextbtn').find('i').attr('class','fa fa-angle-down');
+          };
+         }, 600);
+
+     });
+
+    </script>
+
+</body></html>

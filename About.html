@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache no-svg no-inlinesvg no-smil no-svgclippaths skrollr skrollr-desktop"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- BASICS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>关于我们</title>
+    <meta name="keywords" content="Ctrip">
+    <meta name="description" content="Spider for Ctrip">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <!-- skin -->
+    <link rel="stylesheet" href="csss/default.css">
+    <link rel="shortcut icon" href="#">
+    <style>
+        .cd-vertical-nav li:first-of-type a::after {
+            /* change icon using image sprites */
+            /*background-position: 0px -48px;*/
+            content: "\f015";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            /* fix bug with transitions - set scale(0.01) rather than scale(0) */
+            -webkit-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(4.5em) scale(0.01);
+            transform: translateX(-50%) translateY(4.5em) scale(0.01);
+        }
+
+        .cd-vertical-nav li:nth-of-type(2) a::after {
+            /*background-position: 0px -32px;*/
+            content: "\f25c";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            -webkit-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(1.5em) scale(0.01);
+            transform: translateX(-50%) translateY(1.5em) scale(0.01);
+        }
+
+        .cd-vertical-nav li:nth-of-type(3) a::after {
+            /*background-position: 0px -16px;*/
+            content: "\f1ea";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            -webkit-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+            transform: translateX(-50%) translateY(-1.5em) scale(0.01);
+        }
+
+        .cd-vertical-nav li:nth-of-type(4) a::after {
+            /*background-position: 0px 0px;*/
+            content: "\f0c0";
+            color: black;
+            font-size: 16px;
+            top: 4px;
+            font-family: FontAwesome;
+            -webkit-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            -moz-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            -ms-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            -o-transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+            transform: translateX(-50%) translateY(-4.5em) scale(0.01);
+        }
+
+    </style>
+</head>
+<body style="height: 6275px;">
+<div class="navbar navbar-fixed-top skrollable skrollable-between" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);" style="line-height: 100px; height: 100px; background-color: transparent;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="fa fa-bars color-white"></span>
+            </button>
+            <h1><a class="navbar-brand skrollable skrollable-between" href="#" data-0="line-height:90px;" data-300="line-height:50px;" style="line-height: 90px;"><img src="icon/probe.png" style="display: inline">&nbsp;&nbsp;&nbsp;GANK</a></h1>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav skrollable skrollable-between" data-0="margin-top:20px;" data-300="margin-top:5px;" style="margin-top: 20px;">
+                <li class="active"><a class="smooth" href="#">关于我们</a></li>
+                <li><a class="smooth" href="#">联系我们</a></li>
+            </ul>
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+<!-- advantage -->
+<section id="section-home" class="appear abouthome">
+    <canvas id="canvas" class="aboutcanvas" style="position: absolute;top: 0;width: 100%;overflow: hidden" width="1920" height="700"></canvas>
+    <div class="container-fluid">
+        <div class="row home-top">
+            <div class="col-md-12">
+                <img src="img/abouttitle.png" class="animation103 center-block animated fadeInUp img-responsive">
+            </div>
+        </div>
+    </div>
+    <div id="mice">
+        <a href="#" class="smooth">
+            <div>
+                <span class="unu"></span>
+                <span class="doi"></span>
+            </div>
+        </a>
+    </div>
+</section>
+<section id="section-introduction" class="appear section clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 align-center">
+                <p class="section-header notransition animated fadeInDownNow animation103 fadeInDown">GANK</p>
+            </div>
+        </div>
+        <div class="row mar-bot40 mar-top30">
+            <div class="col-md-12 maintext notransition animated fadeInUpNow animation103 fadeInUp">
+                <p>
+                    <strong>携程旅行网</strong>
+                    创立于1999年，总部设在中国上海，员工30000余人，目前公司已在北京、广州、深圳、杭州、南京、青岛、三亚、丽江、香港、南通17个城市设立分支机构，在南通设立服务联络中心。2010年，携程旅行网战略投资台湾易游网和香港永安旅游，完成了两岸三地的布局。2014年，投资途风旅行网，将触角延伸及北美洲。作为中国领先的综合性旅行服务公司，携程成功整合了高科技产业与传统旅行业，向超过2.5亿会员提供集无线应用、酒店预订、机票预订、旅游度假、商旅管理及旅游资讯在内的全方位旅行服务，被誉为互联网和传统旅游无缝结合的典范。本项目针对携程进行数据抓取。</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 align-center notransition animated fadeInDownNow animation53 fadeInDown">
+                <p class="section-subheader">我们的理念</p>
+            </div>
+        </div>
+        <div class="row mar-bot40 mar-top40">
+            <div class="col-md-4 col-xs-4 align-center notransition animated fadeInDownNow animation53 fadeInDown">
+                <i class="fa fa-circle-o fa-3x mar-bot20"></i>
+                <h4 class="text-bold">简洁</h4>
+                <p>大道至简
+                </p>
+            </div>
+            <div class="col-md-4 col-xs-4 align-center notransition animated fadeInDownNow animation56 fadeInDown">
+                <i class="fa fa-line-chart fa-3x mar-bot20"></i>
+                <h4 class="text-bold">高效</h4>
+                <p>倍道兼行
+                </p>
+            </div>
+            <div class="col-md-4 col-xs-4 align-center notransition animated fadeInDownNow animation59 fadeInDown">
+                <i class="fa fa-cogs fa-3x mar-bot20"></i>
+                <h4 class="text-bold">稳定</h4>
+                <p>周道如砥
+                </p>
+            </div>
+            <div class="col-md-12 maintext notransition animated fadeInUpNow animation103 fadeInUp">
+                <p>
+                    <strong>数据采集</strong>
+                    为用户提供从机票价格信息、航班动态信息、酒店价格信息等旅游相关的一整套数据抓取服务。可以根据用户的需求配置抓取数据源、关键词等信息，实现有目的性的数据抓取。网站实时显示抓取的数据源及进度。
+                </p>
+                <p>
+                    <strong>统计分析</strong>
+                    运用专业的概率论与数理统计方面的知识，配合相关的算法，可以统计出指定字段的数据，并以此为基础预测其发展趋势。此外，系统可根据用户的要求统计指定字段、指定时间范围内的汇总数据。
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- case -->
+<section class="section" style="background-color: #e9f0f5;">
+    <div class="container-fluid">
+        <div class="row mar-bot40">
+            <div class="col-md-12 align-center">
+                <p class="section-header  notransition animated fadeInDownNow animation103 fadeInDown">项目动态</p>
+                <p class="section-subheader notransition animated fadeInUpNow animation103 fadeInUp">脚踏实地 跬步千里</p>
+            </div>
+        </div>
+        <div id="cd-timeline" class="cd-container">
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-location bounce-in">
+                    <img src="icon/cd-icon-location.svg" alt="Location">
+                </div> <!-- cd-timeline-img -->
+                <div class="cd-timeline-content maintext bounce-in">
+                    <h3>开发&测试</h3>
+                    <p>作为一个有责任感的项目小组，我们致力于携程的数据抓取与分析工作。经过长时间高强度的开发以及不间断的测试工作，项目大致成功运行，为课程设计画上了一个圆满的句号。</p>
+                    <span class="cd-date">2016-12-4</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture bounce-in">
+                    <img src="icon/cd-icon-picture.svg" alt="Picture">
+                </div> <!-- cd-timeline-img -->
+                <div class="cd-timeline-content maintext bounce-in">
+                    <h3>系统设计与环境搭建</h3>
+                    <p>小伙子们的技术刚刚起步，一切得自己脚踏实地去探索。经过几天的埋头苦干，我们配置好了开发环境，确定了系统的架构，实现了从无到有的技术突破......</p>
+                    <span class="cd-date">2016-11-27</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-location bounce-in">
+                    <img src="icon/cd-icon-location.svg" alt="Location">
+                </div> <!-- cd-timeline-img -->
+                <div class="cd-timeline-content maintext bounce-in">
+                    <h3>项目需求分析与设计</h3>
+                    <p>随着大数据分析技术的兴起，大数据的采集已成为直接影响大数据分析技术应用的瓶颈，我们针对携程的数据采集系统进行需求分析，并以此为基础制定了项目计划。</p>
+                    <span class="cd-date">2016-11-21 </span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-movie bounce-in">
+                    <img src="icon/cd-icon-movie.svg" alt="Movie">
+                </div> <!-- cd-timeline-img -->
+                <div class="cd-timeline-content maintext bounce-in">
+                    <h3>课题发布&项目组成立</h3>
+                    <p>一群年轻人怀揣着自己的激情和理想，在南京航空航天大学计算机科学与技术学院楼敲定了本项目。小伙子们踌躇满志，意在以自己的力量创造最美好的期末成绩。</p>
+                    <span class="cd-date">2016-11-17</span>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+        </div>
+    </div>
+</section> <!-- cd-timeline -->
+<!-- footer-->
+<section id="footer" class="section footer ">
+    <div class="container pad-bot40">
+        <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+            <div class="col-sm-12 align-center">
+                <ul class="social-network social-circle">
+                    <li><a tabindex="0" class="icoweixin" role="button" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="bottom" data-original-title="" title=""><i class="fa fa-weixin"></i></a></li>
+                    <li>和我们聊聊吗</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row align-center copyright">
+            <div class="col-sm-12">
+                <p><a href="">南京航空航天大学计算机科学与技术学院</a></p>
+                <h4><strong><a href="#" target="_blank" style="letter-spacing: 2px;"><i class="fa fa-qq"></i>&nbsp;1061209264</a></strong></h4>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/modernizr.js"></script>
+<script src="js/jquery_002.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/skrollr.js"></script>
+<script src="js/stellar.js"></script>
+<script src="js/main.js"></script>
+<script>
+    if (!Modernizr.mq('only all and (max-width: 1024px)')) {
+        "use strict";
+
+        var canvas = document.getElementById('canvas'),
+                ctx = canvas.getContext('2d'),
+                w = canvas.width = window.innerWidth,
+                h = canvas.height = 700,
+
+                hue = 217,
+                stars = [],
+                count = 0,
+                maxStars = 1200;
+
+        var canvas2 = document.createElement('canvas'),
+                ctx2 = canvas2.getContext('2d');
+        canvas2.width = 100;
+        canvas2.height = 100;
+        var half = canvas2.width / 2,
+                gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+        gradient2.addColorStop(0.025, '#fff');
+        gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+        gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+        gradient2.addColorStop(1, 'transparent');
+
+        ctx2.fillStyle = gradient2;
+        ctx2.beginPath();
+        ctx2.arc(half, half, half, 0, Math.PI * 2);
+        ctx2.fill();
+
+        // End cache
+
+        function random(min, max) {
+            if (arguments.length < 2) {
+                max = min;
+                min = 0;
+            }
+
+            if (min > max) {
+                var hold = max;
+                max = min;
+                min = hold;
+            }
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function maxOrbit(x, y) {
+            var max = Math.max(x, y),
+                    diameter = Math.round(Math.sqrt(max * max + max * max));
+            return diameter / 2;
+        }
+
+        var Star = function () {
+
+            this.orbitRadius = random(maxOrbit(w, h));
+            this.radius = random(60, this.orbitRadius) / 12;
+            this.orbitX = w / 2;
+            this.orbitY = h / 2;
+            this.timePassed = random(0, maxStars);
+            this.speed = random(this.orbitRadius) / 900000;
+            this.alpha = random(2, 10) / 10;
+
+            count++;
+            stars[count] = this;
+        };
+
+        Star.prototype.draw = function () {
+            var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+                    y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+                    twinkle = random(10);
+
+            if (twinkle === 1 && this.alpha > 0) {
+                this.alpha -= 0.05;
+            } else if (twinkle === 2 && this.alpha < 1) {
+                this.alpha += 0.05;
+            }
+
+            ctx.globalAlpha = this.alpha;
+            ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+            this.timePassed += this.speed;
+        };
+
+        for (var i = 0; i < maxStars; i++) {
+            new Star();
+        }
+
+        function animation() {
+            ctx.globalCompositeOperation = 'source-over';
+            ctx.globalAlpha = 0.8;
+            ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 1)';
+            ctx.fillRect(0, 0, w, h);
+
+            ctx.globalCompositeOperation = 'lighter';
+            for (var i = 1, l = stars.length; i < l; i++) {
+                stars[i].draw();
+            }
+
+            window.requestAnimationFrame(animation);
+        }
+
+        animation();
+    }
+</script>
+
+<a id="scrollUp" href="#header" class="scrollup" style="z-index: 999999; display: none;"><i class="fa fa-chevron-up"></i></a></body></html>
