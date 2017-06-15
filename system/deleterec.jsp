@@ -1,7 +1,6 @@
 <html>
 <link href="test/bootstrap.css" rel="stylesheet">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
@@ -32,10 +31,10 @@
         </div>
         <div class="navbar-collapse collapse" role="navigation">
           <ul class="nav navbar-nav">
-            <li><a href="#" target="_blank">新增记录项</a></li>
+            <li><a href="#" target="_blank">修改记录项</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="dataquery.htm">返回</a></li>
+            <li><a href="../Manage.html">返回</a></li>
           </ul>
         </div>
       </div>
@@ -43,61 +42,70 @@
     <div class="jumbotron masthead">
       <div class="container">
         <h1>Student Address List</h1>
-        <h2>新增记录项</h2>
+        <h2>修改记录项</h2>
       </div>
     </div>
+
     <div class="container projects">
       <div class="projects-header page-header">
-        <h2>操作结果</h2>
+        <h2>查询结果</h2>
       </div><!-- /.container -->
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost:3306/addresslist?useUnicode=true&characterEncoding=utf-8"
      user="root"  password="root"/>
-      <c:set var="stuno" value="${param.stuno}"/>
-      <c:set var="name" value="${param.name}"/>
-      <c:set var="gender" value="${param.gender}"/>
-      <c:set var="classno" value="${param.classno}"/>
-      <c:set var="age" value="${param.age}"/>
-      <c:set var="tele" value="${param.telephone}"/>
-      <c:set var="mail" value="${param.emailadd}"/>
-
-      <sql:update dataSource="${snapshot}" var="result">
-      INSERT INTO stu_info VALUES(?,?,?,?,?,?,?)
-      <sql:param value="${stuno}"/>
-      <sql:param value="${name}"/>
-      <sql:param value="${gender}"/>
-      <sql:param value="${classno}"/>
-      <sql:param value="${age}"/>
-      <sql:param value="${tele}"/>
-      <sql:param value="${mail}"/>
-      </sql:update>
-    <div class="container">
-      <h3 class="text-center">新增记录成功</h3>
-      <table border="1" width="100%" class="table table-striped" data-toggle="table">
-      <thead>
-        <tr>
-           <th>学号</th>
-           <th>姓名</th>
-           <th>性别</th>
-           <th>班级</th>
-           <th>年龄</th>
-           <th>联系方式</th>
-           <th>邮箱</th>
-        </tr>            
-      </thead>
-      <tbody>
-        <tr>
-            <td><c:out value="${stuno}"></c:out></td>
-            <td><c:out value="${name}"></c:out></td>
-            <td><c:out value="${gender}"></c:out></td>
-            <td><c:out value="${classno}"></c:out></td>
-            <td><c:out value="${age}"></c:out></td>
-            <td><c:out value="${tele}"></c:out></td>
-            <td><c:out value="${mail}"></c:out></td>
-        </tr>
-        </tbody>
-      </table>
+      <c:set var="sname" value="${param.delname}"/>
+      <sql:query dataSource="${snapshot}" var="result">
+      SELECT * FROM stu_info WHERE name=?
+      <sql:param value="${sname}"/>
+      </sql:query>        
+        <c:forEach var="row" items="${result.rows}">
+          <tr>
+              <c:set var="ssno" value="${row.stuno}"/>
+              <c:set var="ssname" value="${row.name}"/>
+              <c:set var="ssgender" value="${row.gender}"/>
+              <c:set var="ssclassno" value="${row.classno}"/>
+              <c:set var="ssage" value="${row.age}"/>
+              <c:set var="sstele" value="${row.tele}"/>
+              <c:set var="ssmail" value="${row.mail}"/>
+          </tr>
+        </c:forEach>
+    <div class="container col-xs-4 col-md-offset-4">
+      <form method="post" action="deleteupd.jsp">
+      <h3 class="text-center">确认信息</h3>  
+      <div class="form-group">
+        <label for="StudentNumber">学号</label>
+        <input type="text" class="form-control" placeholder="Student Number" value="${ssno}" readonly="readonly" name="delstuno">
       </div>
+      <div class="form-group">
+        <label for="Name">姓名</label>
+        <input type="text" class="form-control" placeholder="Name" value="${ssname}" readonly="readonly" name="delname">
+      </div>
+      <div class="form-group">
+        <label for="Gender">性别</label>
+        <input type="text" class="form-control" placeholder="Gender" value="${ssgender}" readonly="readonly" name="delgender">
+      </div>
+      <div class="form-group">
+        <label for="ClassNo">班级</label>
+        <input type="text" class="form-control" placeholder="ClassNo" value="${ssclassno}" readonly="readonly" name="delclassno">
+      </div>
+      <div class="form-group">
+        <label for="Age">年龄</label>
+        <input type="text" class="form-control" placeholder="Age" value="${ssage}" readonly="readonly" name="delage">
+      </div>
+      <div class="form-group">
+        <label for="Telephone">联系方式</label>
+        <input type="text" class="form-control" placeholder="Telephone" value="${sstele}" readonly="readonly" name="deltelephone">
+      </div>
+      <div class="form-group">
+        <label for="Email">邮箱</label>
+        <input type="email" class="form-control" placeholder="Email Address" value="${ssmail}" readonly="readonly" name="delemailadd">
+      </div>
+      <div class="container col-xs-6 col-md-offset-3">
+        <button type="submit" class="btn btn-default btn-block">确认删除</button>
+      </div>
+    </form>
+    </div>
+  </div>
     </div>
     <footer class="footer ">
       <div class="container">

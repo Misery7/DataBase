@@ -34,7 +34,7 @@
             <li><a href="#" target="_blank">修改记录项</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="dataquery.htm">返回</a></li>
+            <li><a href="../Manage.html">返回</a></li>
           </ul>
         </div>
       </div>

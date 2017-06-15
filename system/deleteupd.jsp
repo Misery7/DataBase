@@ -32,10 +32,10 @@
         </div>
         <div class="navbar-collapse collapse" role="navigation">
           <ul class="nav navbar-nav">
-            <li><a href="#" target="_blank">新增记录项</a></li>
+            <li><a href="#" target="_blank">删除记录项</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="dataquery.htm">返回</a></li>
+            <li><a href="../Manage.html">返回</a></li>
           </ul>
         </div>
       </div>
@@ -43,7 +43,7 @@
     <div class="jumbotron masthead">
       <div class="container">
         <h1>Student Address List</h1>
-        <h2>新增记录项</h2>
+        <h2>更新记录项</h2>
       </div>
     </div>
     <div class="container projects">
@@ -53,26 +53,20 @@
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost:3306/addresslist?useUnicode=true&characterEncoding=utf-8"
      user="root"  password="root"/>
-      <c:set var="stuno" value="${param.stuno}"/>
-      <c:set var="name" value="${param.name}"/>
-      <c:set var="gender" value="${param.gender}"/>
-      <c:set var="classno" value="${param.classno}"/>
-      <c:set var="age" value="${param.age}"/>
-      <c:set var="tele" value="${param.telephone}"/>
-      <c:set var="mail" value="${param.emailadd}"/>
+      <c:set var="stuno" value="${param.delstuno}"/>
+      <c:set var="name" value="${param.delname}"/>
+      <c:set var="gender" value="${param.delgender}"/>
+      <c:set var="classno" value="${param.delclassno}"/>
+      <c:set var="age" value="${param.delage}"/>
+      <c:set var="tele" value="${param.deltelephone}"/>
+      <c:set var="mail" value="${param.delemailadd}"/>
 
       <sql:update dataSource="${snapshot}" var="result">
-      INSERT INTO stu_info VALUES(?,?,?,?,?,?,?)
-      <sql:param value="${stuno}"/>
-      <sql:param value="${name}"/>
-      <sql:param value="${gender}"/>
-      <sql:param value="${classno}"/>
-      <sql:param value="${age}"/>
-      <sql:param value="${tele}"/>
-      <sql:param value="${mail}"/>
+        DELETE FROM stu_info WHERE stuno = ?
+        <sql:param value="${stuno}"/>
       </sql:update>
     <div class="container">
-      <h3 class="text-center">新增记录成功</h3>
+      <h3 class="text-center">删除记录成功</h3>
       <table border="1" width="100%" class="table table-striped" data-toggle="table">
       <thead>
         <tr>
