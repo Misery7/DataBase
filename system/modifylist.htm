@@ -2,8 +2,7 @@
 <html lang="zh-CN"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     
-    <meta charset="utf-8">
-    <title>采集配置</title>
+    <title>修改记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -15,7 +14,6 @@
     <link href="test/site.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/build.css">    
-    <link href="test/square/red.css" rel="stylesheet">
     <script src="test/icheck.js"></script>
     
   </head>
@@ -30,11 +28,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand hidden-sm" href="#">Spider For Ctrip</a>
+          <a class="navbar-brand hidden-sm" href="#">Student Address List</a>
         </div>
         <div class="navbar-collapse collapse" role="navigation">
           <ul class="nav navbar-nav">
-            <li><a href="#" target="_blank">采集配置</a></li>
+            <li><a href="#" target="_blank">修改通讯录</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
             <li><a href="../Manage.html">返回主菜单</a></li>
@@ -47,21 +45,22 @@
 
     <div class="jumbotron masthead">
       <div class="container">
-        <h1>Spider For Ctrip</h1>
-        <h2>项目配置</h2>
+        <h1>Student Address List</h1>
+        <h2>修改通讯录</h2>
       </div>
     </div>
 
     <div class="container projects">
 
       <div class="projects-header page-header">
-        <h2>请在本页面完成信息采集配置</h2>
+        <h2>请按姓名检索需要修改的记录</h2>
       </div>
-      <div class="container">
+      <form class="form" method="post" action="modifyinfo.jsp">
+      <div class="container col-xs-8 col-md-offset-2">
         <div class="form-group col-xs-10">
           <div class="input-group">
-            <div class="input-group-addon">请手动配置正则表达式</div>
-            <input class="form-control input-lg" type="url" placeholder="Enter Regular Expression" name="reneed">
+            <div class="input-group-addon">输入姓名</div>          
+            <input class="form-control input-lg" type="text" placeholder="Enter Student Name" name="stuname">
           </div>
         </div>
         <button type="submit" class="btn btn-default btn-lg col-xs-2">Submit</button>
@@ -69,7 +68,7 @@
     </div><!-- /.container -->
 
 
-    <footer class="footer ">
+    <footer class="footer">
       <div class="container">
         <div class="row footer-top">
           <div class="col-sm-6 col-lg-6">
