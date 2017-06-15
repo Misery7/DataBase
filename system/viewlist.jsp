@@ -59,6 +59,12 @@
         </div>
       </div>
     </div>  
+    <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
+     url="jdbc:mysql://localhost:3306/addresslist?useUnicode=true&characterEncoding=utf-8"
+     user="root"  password="root"/>
+      <sql:query dataSource="${snapshot}" var="result">
+      SELECT * FROM stu_info
+      </sql:query>        
 
     <div class="jumbotron masthead">
       <div class="container">
@@ -77,16 +83,42 @@
                   <i class="glyphicon glyphicon-remove"></i> Delete
               </button>
           </div>
-          <table id="table"
-                 class="table table-striped"
-                 data-toolbar="#toolbar"
-                 data-show-export="true"
-                 data-pagination="true"
-                 data-show-refresh="true"
-                 data-search="true"
-                 data-show-pagination-switch="true"
-                 border="1">
-          </table>
+      <table id="table"
+             class="table table-striped"
+             data-toolbar="#toolbar"
+             data-show-export="true"
+             data-pagination="true"
+             data-show-refresh="true"
+             data-search="true"
+             data-show-pagination-switch="true"
+             border="1"
+             data-toggle="table">
+        <thead>
+          <tr>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>班级</th>
+            <th>年龄</th>
+            <th>联系方式</th>
+            <th>邮箱</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <c:forEach var="row" items="${result.rows}">
+          <tr>
+              <td><c:out value="${row.stuno}"/></td>
+              <td><c:out value="${row.name}"/></td>
+              <td><c:out value="${row.gender}"/></td>
+              <td><c:out value="${row.classno}"/></td>
+              <td><c:out value="${row.age}"/></td>
+              <td><c:out value="${row.tele}"/></td>
+              <td><c:out value="${row.mail}"/></td>
+          </tr>
+          </c:forEach>
+        </tbody>       
+      </table>
       </div>
     </div>
 
@@ -129,33 +161,6 @@
       });
     </script>
 
-    <script>
-    $('#table').bootstrapTable({
-      url: 'test.json',
-      columns: [{
-          field: 'stuno',
-          title: '学号'
-      }, {
-          field: 'name',
-          title: '姓名'
-      }, {
-          field: 'gender',
-          title: '性别'
-      }, {
-          field: 'classno',
-          title: '班级'
-      }, {
-          field: 'age',
-          title: '年龄'
-      }, {
-          field: 'tele',
-          title: '联系方式'
-      }, {
-          field: 'mail',
-          title: '邮箱'
-      }
-      ]
-    });
-    </script>
+
 
 <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-angle-up"></i></a></body></html>
