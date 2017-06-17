@@ -60,15 +60,17 @@
       <c:set var="age" value="${param.newage}"/>
       <c:set var="tele" value="${param.newtelephone}"/>
       <c:set var="mail" value="${param.newemailadd}"/>
-
+      <c:set var="Loginname" value="${LoginUser}"/>
+      
       <sql:update dataSource="${snapshot}" var="result">
-        UPDATE stu_info SET gender = ?, classno = ?, age = ?, tele = ?, mail = ? WHERE stuno = ?
+        UPDATE stu_info SET gender = ?, classno = ?, age = ?, tele = ?, mail = ? WHERE stuno = ? AND owner = ?
         <sql:param value="${gender}"/>
         <sql:param value="${classno}"/>
         <sql:param value="${age}"/>
         <sql:param value="${tele}"/>
         <sql:param value="${mail}"/>
         <sql:param value="${stuno}"/>
+        <sql:param value="${Loginname}"/>
       </sql:update>
     <div class="container">
       <h3 class="text-center">修改记录成功</h3>

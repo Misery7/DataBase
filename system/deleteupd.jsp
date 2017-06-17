@@ -35,7 +35,7 @@
             <li><a href="#" target="_blank">删除记录项</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="../Manage.html">返回</a></li>
+            <li><a href="../Manage.jsp">返回</a></li>
           </ul>
         </div>
       </div>
@@ -60,10 +60,12 @@
       <c:set var="age" value="${param.delage}"/>
       <c:set var="tele" value="${param.deltelephone}"/>
       <c:set var="mail" value="${param.delemailadd}"/>
+      <c:set var="Loginname" value="${LoginUser}"/>
 
       <sql:update dataSource="${snapshot}" var="result">
-        DELETE FROM stu_info WHERE stuno = ?
+        DELETE FROM stu_info WHERE stuno = ? AND owner = ?
         <sql:param value="${stuno}"/>
+        <sql:param value="${Loginname}"/>
       </sql:update>
     <div class="container">
       <h3 class="text-center">删除记录成功</h3>

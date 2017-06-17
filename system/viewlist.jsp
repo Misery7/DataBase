@@ -54,7 +54,7 @@
             <li><a href="#" target="_blank">查看通讯录</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="../Manage.html">返回主菜单</a></li>
+            <li><a href="../Manage.jsp">返回主菜单</a></li>
           </ul>
         </div>
       </div>
@@ -62,8 +62,10 @@
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost:3306/addresslist?useUnicode=true&characterEncoding=utf-8"
      user="root"  password="root"/>
+      <c:set var="Loginname" value="${LoginUser}"/>
       <sql:query dataSource="${snapshot}" var="result">
-      SELECT * FROM stu_info
+      SELECT * FROM stu_info where owner=?
+      <sql:param value="${Loginname}"/>
       </sql:query>        
 
     <div class="jumbotron masthead">
@@ -75,7 +77,7 @@
 
     <div class="container projects">
       <div class="projects-header page-header">
-        <h2>1614303通讯录</h2>
+        <h2><c:out value="${Loginname}"/>的个人通讯录</h2>
       </div><!-- /.container -->
       <div class="container">
           <div id="toolbar">

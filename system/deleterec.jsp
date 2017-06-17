@@ -34,7 +34,7 @@
             <li><a href="#" target="_blank">修改记录项</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="../Manage.html">返回</a></li>
+            <li><a href="../Manage.jsp">返回</a></li>
           </ul>
         </div>
       </div>
@@ -54,9 +54,11 @@
      url="jdbc:mysql://localhost:3306/addresslist?useUnicode=true&characterEncoding=utf-8"
      user="root"  password="root"/>
       <c:set var="sname" value="${param.delname}"/>
+      <c:set var="Loginname" value="${LoginUser}"/>
       <sql:query dataSource="${snapshot}" var="result">
-      SELECT * FROM stu_info WHERE name=?
+      SELECT * FROM stu_info WHERE name=? AND owner=?
       <sql:param value="${sname}"/>
+      <sql:param value="${Loginname}"/>
       </sql:query>        
         <c:forEach var="row" items="${result.rows}">
           <tr>

@@ -35,7 +35,7 @@
             <li><a href="#" target="_blank">新增记录项</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="dataquery.htm">返回</a></li>
+            <li><a href="../Manage.jsp">返回</a></li>
           </ul>
         </div>
       </div>
@@ -60,9 +60,10 @@
       <c:set var="age" value="${param.age}"/>
       <c:set var="tele" value="${param.telephone}"/>
       <c:set var="mail" value="${param.emailadd}"/>
+      <c:set var="Loginname" value="${LoginUser}"/>
 
       <sql:update dataSource="${snapshot}" var="result">
-      INSERT INTO stu_info VALUES(?,?,?,?,?,?,?)
+      INSERT INTO stu_info VALUES(?,?,?,?,?,?,?,?)
       <sql:param value="${stuno}"/>
       <sql:param value="${name}"/>
       <sql:param value="${gender}"/>
@@ -70,6 +71,7 @@
       <sql:param value="${age}"/>
       <sql:param value="${tele}"/>
       <sql:param value="${mail}"/>
+      <sql:param value="${Loginname}"/>
       </sql:update>
     <div class="container">
       <h3 class="text-center">新增记录成功</h3>
