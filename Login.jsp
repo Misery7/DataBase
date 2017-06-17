@@ -41,7 +41,11 @@
         <c:set var="qres" value="${row.password}"/>
       </c:forEach>
       <c:if test="${pwd==qres}">
-        <c:redirect url="Manage.html"/>
+        <% 
+        String login=request.getParameter("uname");
+        session.setAttribute("LoginUser",login);
+        %>
+        <c:redirect url="Manage.jsp"/>
       </c:if>
     </div> <!-- /container -->
 
@@ -49,6 +53,5 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
   
-
   </body>
 </html>

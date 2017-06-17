@@ -2,6 +2,13 @@
 <html class="dk_fouc has-js" lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<% request.setCharacterEncoding("utf-8"); %>
     <meta charset="utf-8">
     <title>学生通讯录管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +27,7 @@
                 <li><a href="About.html">About Us</a></li>
               </ul>
               <ul class="nav pull-right">
-                <li><a href="#">CurrentUser : Test</a></li>
+                <li><a href="#">CurrentUser : <% out.print(session.getAttribute("LoginUser")); %></a></li>
                 <li><a href="Login.html">Quit</a></li>
               </ul>
           </div>
@@ -53,7 +60,7 @@
             <img class="tile-image" alt="" src="img/colors.png">
             <h3 class="tile-title">删除记录项</h3>
             <p>Collect data needed from Internet. </p>
-            <a class="btn btn-primary btn-large btn-block" href="system/datacollect.htm">Get Started</a>
+            <a class="btn btn-primary btn-large btn-block" href="system/deleterec.html">Get Started</a>
           </div>
         </div>
 
@@ -63,7 +70,7 @@
             <img class="tile-image big-illustration" alt="" src="img/share.png">
             <h3 class="tile-title">按条件查询</h3>
             <p>Query data from database quickly.</p>
-            <a class="btn btn-primary btn-large btn-block" href="system/queryres.jsp">Get Started</a>
+            <a class="btn btn-primary btn-large btn-block" href="system/dataquery.html">Get Started</a>
           </div>
         </div>
       </div>
@@ -90,7 +97,7 @@
             <img class="tile-image big-illustration" alt="" src="img/bag.png">
             <h3 class="tile-title">系统管理</h3>
             <p>Manage your identify and password or ask for help.</p>
-            <a class="btn btn-primary btn-large btn-block" href="system/insertrec.jsp">Get Started</a>
+            <a class="btn btn-primary btn-large btn-block" href="#">Get Started</a>
           </div>
         </div>
 
