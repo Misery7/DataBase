@@ -127,5 +127,3 @@
     </footer>
     <script src="test/toc.js"></script>
     <script src="test/site.js"></script>
-
-  <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-angle-up"></i></a></body></html>

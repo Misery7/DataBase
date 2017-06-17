@@ -10,10 +10,8 @@
 <% request.setCharacterEncoding("utf-8"); %>
     <link href="test/font-awesome.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
-
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-    
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>   
     <link href="test/site.css" rel="stylesheet">
     <title>操作结果</title>
 </head>
@@ -136,5 +134,3 @@
     </footer>
     <script src="test/toc.js"></script>
     <script src="test/site.js"></script>
-
-  <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-angle-up"></i></a></body></html>

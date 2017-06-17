@@ -135,13 +135,4 @@
     </footer>
 
     <!-- Load JS here for greater good =============================-->
-    <script src="demo/js/jquery_002.js"></script>
-    <script src="demo/js/jquery-ui-1.js"></script>
-    <script src="demo/js/jquery.js"></script>
-    <script src="demo/js/bootstrap-tooltip.js"></script>
-    <script src="demo/js/jquery_003.js"></script>
-    <script src="demo/js/jquery_004.js"></script>
-    <script src="demo/js/application.js"></script>
-    <script src="demo/js/projects.js"></script>
-
   
