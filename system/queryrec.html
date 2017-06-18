@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    
-    <title>修改记录</title>
+<useUnicode=true&characterEncoding=utf-8>    
+    <meta charset="utf-8">
+    <title>数据查询</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
     
     <!-- Site CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+
     <link href="../css/site.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/build.css">    
-    
+    <link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+    <script src="../dist/js/bootstrapValidator.js"></script>
+
   </head>
   <body>
 
@@ -26,7 +35,7 @@
         </div>
         <div class="navbar-collapse collapse" role="navigation">
           <ul class="nav navbar-nav">
-            <li><a href="#" target="_blank">修改通讯录</a></li>
+            <li><a href="#" target="_blank">数据查询</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
             <li><a href="../Manage.jsp">返回主菜单</a></li>
@@ -40,29 +49,37 @@
     <div class="jumbotron masthead">
       <div class="container">
         <h1>Student Address List</h1>
-        <h2>修改通讯录</h2>
+        <h2>通讯录查询</h2>
       </div>
     </div>
 
     <div class="container projects">
 
       <div class="projects-header page-header">
-        <h2>请按姓名检索需要修改的记录</h2>
-      </div>
-      <form class="form" method="post" action="modifyrec.jsp">
-      <div class="container col-xs-8 col-md-offset-2">
-        <div class="form-group col-xs-10">
-          <div class="input-group">
-            <div class="input-group-addon">输入姓名</div>          
-            <input class="form-control input-lg" type="text" placeholder="Enter Student Name" name="stuname">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-default btn-lg col-xs-2">Submit</button>
-      </div> 
+        <h2>按年龄范围进行查询</h2>
     </div><!-- /.container -->
 
-
-    <footer class="footer">
+      <div class="container col-xs-10 col-md-offset-1">
+          <form class="form-inline form-horizontal" role="form" action="queryrec.jsp" method="post">
+            <div class="container col-xs-4">
+              <div class="form-group">
+                <label for="agelow">年龄下界</label>
+                <input type="text" class="form-control" id="agelow" placeholder="Low Age" name="agelow">
+              </div>
+            </div>
+            <div class="container col-xs-4">
+              <div class="form-group">
+                <label for="agehigh">年龄上界</label>
+                <input type="text" class="form-control" id="agehigh" placeholder="High Age" name="agehigh">
+              </div>
+            </div>
+            <div class="container col-xs-4">
+              <button type="submit" class="btn btn-default">查找</button>
+            </div>
+          </form>
+      </div><!-- /.row -->
+    </div>
+    <footer class="footer ">
       <div class="container">
         <div class="row footer-top">
           <div class="col-sm-6 col-lg-6">
@@ -91,3 +108,4 @@
     
     <script src="../js/toc.js"></script>
     <script src="../js/site.js"></script>
+

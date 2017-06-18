@@ -70,7 +70,7 @@
             <img class="tile-image big-illustration" alt="" src="img/share.png">
             <h3 class="tile-title">按条件查询</h3>
             <p>Query data from database quickly.</p>
-            <a class="btn btn-primary btn-large btn-block" href="system/dataquery.html">Get Started</a>
+            <a class="btn btn-primary btn-large btn-block" href="system/queryrec.html">Get Started</a>
           </div>
         </div>
       </div>

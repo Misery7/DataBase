@@ -7,9 +7,6 @@
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-    <meta charset="utf-8">
-    <title>查看通讯录</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
@@ -20,10 +17,9 @@
     <link href="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js"></script>
-    
-  </head>
-  <body>
-
+    <title>操作结果</title>
+</head>
+<body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -37,28 +33,32 @@
         </div>
         <div class="navbar-collapse collapse" role="navigation">
           <ul class="nav navbar-nav">
-            <li><a href="#" target="_blank">查看通讯录</a></li>
+            <li><a href="#" target="_blank">查询记录项</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-sm">
-            <li><a href="../Manage.jsp">返回主菜单</a></li>
+            <li><a href="../Manage.jsp">返回</a></li>
           </ul>
         </div>
       </div>
-    </div>  
-    
+    </div>
+
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
      url="jdbc:mysql://localhost:3306/addresslist?useUnicode=true&characterEncoding=utf-8"
      user="root"  password="root"/>
+      <c:set var="highage" value="${param.agehigh}"/>
+      <c:set var="lowage" value="${param.agelow}"/>
       <c:set var="Loginname" value="${LoginUser}"/>
       <sql:query dataSource="${snapshot}" var="result">
-      SELECT * FROM stu_info where owner=?
+      SELECT * FROM stu_info WHERE age>=? AND age<=? AND owner=?
+      <sql:param value="${lowage}"/>
+      <sql:param value="${highage}"/>
       <sql:param value="${Loginname}"/>
-      </sql:query>        
+      </sql:query>  
 
     <div class="jumbotron masthead">
       <div class="container">
         <h1>Student Address List</h1>
-        <h2>查看通讯录</h2>
+        <h2>查询通讯录</h2>
       </div>
     </div>
 
@@ -111,8 +111,7 @@
       </div>
     </div>
 
-
-    <footer class="footer ">
+    <footer class="footer">
       <div class="container">
         <div class="row footer-top">
           <div class="col-sm-6 col-lg-6">
@@ -132,12 +131,10 @@
                   <li><a href="#">电子邮件</a></li>
                 </ul>
               </div>
-            </div>
-    
+            </div>    
           </div>
         </div>
       </div>
     </footer>
-    
     <script src="../js/toc.js"></script>
     <script src="../js/site.js"></script>
