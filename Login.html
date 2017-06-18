@@ -8,14 +8,16 @@
 
     <title>Login</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 
-    <!-- Custom styles for this template -->
+    <link href="./css/site.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/build.css">    
+    <link rel="stylesheet" href="./dist/css/bootstrapValidator.css"/>
+    <script src="./dist/js/bootstrapValidator.js"></script>
     <link href="css/signin.css" rel="stylesheet">
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
   </head>
 
@@ -30,19 +32,52 @@
         background-repeat: no-repeat;
       }
       </style>
-
-      <form class="form-signin" role="form" method="POST" action="Login.jsp">
-        <h2 class="form-signin-heading">用户登录</h2>
-        <input class="form-control" placeholder="用户名" required="" autofocus="" type="text" name="uname">
-        <input class="form-control" placeholder="密码" required="" type="password" name="upwd">
+      <div class="container col-md-6 col-md-offset-3">
+         <h1>用户登录</h1>
+      </div>
+      <form class="form-signin form-horizontal" role="form" method="POST" action="Login.jsp" id="defaultForm">
+        <div class="form-group form-group-lg">
+          <label for="username" class="control-label">用户名</label>
+          <input class="form-control" placeholder="User Name" id="username" type="text" name="uname">
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="passwd" class="control-label">密码</label>
+          <input class="form-control" placeholder="Password" id="passwd" type="password" name="upwd">
+        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form>
     </div> <!-- /container -->
 
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-  
-
   </body>
 </html>
+
+<script>
+$(document).ready(function() {
+
+    $('#defaultForm').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            uname: {
+                validators: {
+                    notEmpty: {
+                        message: 'The User Name is required and cannot be empty'
+                    }
+                }
+            },
+            upwd: {
+                validators: {
+                    notEmpty: {
+                        message: 'The Password is required and cannot be empty'
+                    }
+                }
+            }
+        }
+    });
+
+});
+</script>
