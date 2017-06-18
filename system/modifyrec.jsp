@@ -9,10 +9,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <% request.setCharacterEncoding("utf-8"); %>
 
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>   
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+
     <link href="../css/site.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/build.css">    
+    <link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+    <script src="../dist/js/bootstrapValidator.js"></script>
     <title>操作结果</title>
 </head>
 <body>
@@ -70,7 +74,7 @@
           </tr>
         </c:forEach>
     <div class="container col-xs-4 col-md-offset-4">
-      <form method="post" action="modifyupd.jsp">
+      <form id="defaultForm" method="post" action="modifyupd.jsp">
       <h3 class="text-center">更新信息</h3>  
       <div class="form-group">
         <label for="StudentNumber">学号</label>
@@ -134,3 +138,81 @@
     </footer>
     <script src="../js/toc.js"></script>
     <script src="../js/site.js"></script>
+
+<script>
+$(document).ready(function() {
+
+    $('#defaultForm').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            newgender: {
+                validators: {
+                    notEmpty: {
+                        message: 'The gender is required and cannot be empty'
+                    }
+                }
+            },
+            newclassno: {
+                validators: {
+                    notEmpty: {
+                        message: 'The class number is required and cannot be empty'
+                    },
+                    egexp: {
+                        regexp: /^[0-9]{7}$/,
+                        message: 'The class number must contain only number and be 7 characters long'
+                    },
+                    stringLength: {
+                        min: 7,
+                        max: 7,
+                        message: 'The class number must be 9 characters long'
+                    }
+                }
+
+            },
+            newage: {
+                validators: {
+                    lessThan: {
+                        value: 100,
+                        inclusive: true,
+                        message: 'The ages has to be less than 100'
+                    },
+                    greaterThan: {
+                        value: 10,
+                        inclusive: false,
+                        message: 'The ages has to be greater than or equals to 10'
+                    }
+                }
+            },
+            newtelephone: {
+                validators: {
+                    notEmpty: {
+                        message: 'The telephone is required and cannot be empty'
+                    },
+                    regexp: {
+                        regexp: /^1[3|4|5|7|8][0-9]{9}$/,
+                        message: 'The telephone number must begin with 13/14/15/17/18 and contain only number'
+                    },
+                    stringLength: {
+                        min: 11,
+                        max: 11,
+                        message: 'The telephone must be 11 characters long'
+                    }
+                }
+            },
+            newemailadd: {
+                validators: {
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
+                    }
+                }
+            }
+        }
+    });
+
+});
+</script>
